@@ -1,0 +1,41 @@
+    .signin-link{
+    color: mediumaquamarine;
+    text-decoration: none;
+    font-weight: 500;
+    text-decoration-line: none ;
+    }
+
+    .signup-link{
+        color: tomato;
+        font-weight: 500;
+    }
+
+    .vl {
+    border-left: 1px solid grey;
+    height: 100px;
+    
+  }
+.font-awesome{
+    size: 3px;
+}
+.form-icon{
+    font-family: Arial ;
+    font-family: fontAwesome;
+}
+
+.btn-font{
+    font-size: small;
+}
+.submit-btn{
+    background-color: rgb(10, 109, 109);
+    color: white;
+    border-radius: 5px;
+}
+.height-nav{
+    height: 115px;
+    border-bottom: 2px solid rgb(18, 18, 90) ;
+}
+.btn-nav{
+    color: white;
+    background-color: rgb(10, 109, 109) ;
+}
