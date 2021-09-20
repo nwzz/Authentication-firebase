@@ -7,7 +7,14 @@ import '../Login/Login.css';
 
 const Signup = () => {
 
-const [newUser, setNewUser] = useState(false);
+const [newUser, setNewUser] = useState({
+    isSignedUp: false,
+    name: '',
+    email: '',
+    photo: '',
+    password: '',
+
+});
 
 
 
@@ -21,35 +28,68 @@ const handleBlur = (e) => {
       const passwordHasNumber =  /\d{1}/.test(e.target.value);
       isFieldValid = isPasswordValid && passwordHasNumber;
     }
+
+    if(e.target.name === 'name'){
+        isFieldValid = true;
+    }
+
+    if(e.target.name === 'phone'){
+        const isPhnValid = e.target.value.length > 6;
+        const phoneHasNumber =  /\d{1}/.test(e.target.value);
+        isFieldValid = isPhnValid && phoneHasNumber;
+
+    }
     if(isFieldValid){
       const newUserInfo = {...newUser};
       newUserInfo[e.target.name] = e.target.value;
       setNewUser(newUserInfo);
+      console.log(newUserInfo);
+      console.log(newUser);
     }
   }
         
 
-    const handleSubmit = (e) => {
-     const email = newUser.email;
-     const password = newUser.password;
-     const fullName = newUser.fullName;
-     const phone = newUser.phone;
-
+const handleSubmit = (e) => {
+    console.log('clicked');
 
     const auth = getAuth();
-    createUserWithEmailAndPassword(auth, email, password, phone, fullName)
-    .then((userCredential) => {
-    // Signed in 
-    const user = userCredential.user;
-    console.log(user);
-    // ...
-  })
-  .catch((error) => {
-    const errorCode = error.code;
-    const errorMessage = error.message;
-    // ..
-  });
-    }
+    const email = newUser.email;
+    const password = newUser.password;
+
+    createUserWithEmailAndPassword(auth, email, password)
+    .then((res) => {
+        const newUserInfo = {...newUser, isSignedUp: true};
+        newUserInfo.error = '';
+        newUserInfo.success = true;
+        setNewUser(newUserInfo);
+        //updateUserName(newUser.name);
+        console.log(res.newUser);
+    })
+    .catch( error => {
+        const errorCode = error.code;
+        const errorMessage = error.message;
+        console.log(errorCode);
+        console.log(errorMessage);
+    })
+    e.preventDefault();
+}
+
+
+// const updateUserName = name =>{
+//     const user = getAuth().currentUser;
+
+//     user.updateProfile({
+//       displayName: name
+//     }).then(function() {
+//       console.log('user name updated successfully')
+//     }).catch(function(error) {
+//       console.log(error)
+//     });
+//   }
+
+
+
+
 
 
 
@@ -61,6 +101,8 @@ const handleBlur = (e) => {
                 <div className="text-center">
                     <h4><Link to={'/login/'}><span className="signin-link">SIGN IN </span> </Link>  | <Link to={'/signup/'}><span className="signup-link"> SIGN UP</span> </Link></h4>
                 </div><br />
+                
+                { newUser.success && <h6 style={{color: 'green'}}>User { newUser.email ? 'created' : 'Logged In'} successfully Go to <Link to="/">Sign In</Link> Now</h6> }
 
                 <div className="container d-flex justify-content-center ">
                     <div className="shadow p-3 mb-5 bg-body rounded" style={{ width: '750px', height: '550px', border: '1px solid white', padding: '5px' }}>
@@ -87,24 +129,24 @@ const handleBlur = (e) => {
                                     </div><br />
 
                                     <Form.Group controlId="formGroupName" onBlur={handleBlur}>
-                                        <Form.Control type="name" placeholder="&#x10f0e0; Enter your Full Name" />
+                                        <Form.Control type="name" name="name" placeholder="&#x10f0e0; Enter your Full Name" />
                                     </Form.Group> <br />
 
                                     <Form.Group controlId="formGroupEmail" onBlur={handleBlur}>
-                                        <Form.Control type="email" placeholder="&#x10f0e0; Enter your email address" />
+                                        <Form.Control type="email" name="email" placeholder="&#x10f0e0; Enter your email address" />
                                     </Form.Group> <br />
 
                                     <Form.Group controlId="formGroupPhone" onBlur={handleBlur}>
-                                        <Form.Control type="phone" placeholder="&#x10f0e0; Enter your Phone Number" />
+                                        <Form.Control type="phone" name="phone" placeholder="&#x10f0e0; Enter your Phone Number" />
                                     </Form.Group> <br />
 
                                     <Form.Group controlId="formGroupPassword" onBlur={handleBlur}>
-                                        <Form.Control type="password" className="form-icon" placeholder="&#xf30d; Enter Your Password" />
+                                        <Form.Control type="password" name="password" className="form-icon" placeholder="&#xf30d; Enter Your Password" />
                                     </Form.Group> <br />
                                     <div className="justify-content-start"> 
 
                                     <small>Already Have an Account? <Link to={'/login/'}><span className="signin-link">Sign In</span></Link> </small><br />
-                                    <small>By creating an account you are agree to Tutory's user <span className="signin-link">Privacy Policy</span> and <span className="signin-link">Terms and Conditions</span>.</small>
+                                    <small>By creating an account you are agree to Tutory's user <span className="signin-link"><a href="#">Privacy Policy</a></span> and <span className="signin-link"><a href="#">Terms and Conditions</a></span>.</small>
 
                                     </div><br /><br />
 

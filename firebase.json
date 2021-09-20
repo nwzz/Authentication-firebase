@@ -1,6 +1,6 @@
 {
   "hosting": {
-    "public": "dist/najj-tech-task",
+    "public": "build",
     "ignore": [
       "firebase.json",
       "**/.*",
