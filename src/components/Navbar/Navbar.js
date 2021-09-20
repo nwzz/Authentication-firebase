@@ -17,7 +17,7 @@ const handleNavSignUp =() =>{
         <div className="container">
             <div class="navbar navbar-expand-lg navbar-light bg-light height-nav">
                 <div class="container-fluid row ">
-                    <div className="col-md-2"><a class="navbar-brand" href="#">Online Coaching</a></div>
+                    <div className="col-md-2"><a class="navbar-brand" href="/">Online Coaching</a></div>
                     
                     <div class="collapse navbar-collapse col-md-7 justify-content-around" id="navbarText">
                         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
@@ -39,8 +39,9 @@ const handleNavSignUp =() =>{
                         </ul>
                         
                     </div>
-                    <div className="col-md-3">
-                        <button className="btn btn-nav" onClick={handleNavSignIn} >Sign In</button> <button className="btn btn-nav" onClick={handleNavSignUp}>Sign Up</button>
+                    <div className="col-md-3 d-flex gap-3">
+                    <button className="btn btn-nav" onClick={handleNavSignIn} >Sign In</button> 
+                    <button className="btn btn-nav" onClick={handleNavSignUp}>Sign Up</button>
                     </div>
                 </div>
             </div>

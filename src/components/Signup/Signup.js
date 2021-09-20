@@ -104,7 +104,7 @@ const handleBlur = (e) => {
                                     <div className="justify-content-start"> 
 
                                     <small>Already Have an Account? <Link to={'/login/'}><span className="signin-link">Sign In</span></Link> </small><br />
-                                    <small>By creating an account you are agree to Tutory's user <span className="signin-link">Privacy Policy</span>and <span className="signin-link">Terms and Conditions</span></small>
+                                    <small>By creating an account you are agree to Tutory's user <span className="signin-link">Privacy Policy</span> and <span className="signin-link">Terms and Conditions</span>.</small>
 
                                     </div><br /><br />
 
