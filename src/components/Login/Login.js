@@ -217,7 +217,7 @@ const Login = () => {
                     </div>
                   </div>
                   <div className="col-md-7 d-flex justify-content-end my-auto">
-                    <button className="btn  "><small>Forgot Password?</small></button>
+                    <a href="#"><span className="signin-link">Forgot Password</span></a>
                   </div>
                 </div>
 

@@ -5,7 +5,9 @@ import { Link } from 'react-router-dom';
 const Navbar = () => {
 
 const handleNavSignIn = () =>{
-    <Link to="/login/"></Link>
+    return(
+        <Link to="/login/"></Link>
+    )
 }
 
 const handleNavSignUp =() =>{
@@ -40,8 +42,8 @@ const handleNavSignUp =() =>{
                         
                     </div>
                     <div className="col-md-3 d-flex gap-3">
-                    <button className="btn btn-nav" onClick={handleNavSignIn} >Sign In</button> 
-                    <button className="btn btn-nav" onClick={handleNavSignUp}>Sign Up</button>
+                    <Link to="/"><span className="btn nav-btn">Sign In</span></Link>
+                    <Link to="/signup/"><span className="btn nav-btn">Sign Up</span></Link>
                     </div>
                 </div>
             </div>
