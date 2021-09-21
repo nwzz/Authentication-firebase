@@ -1,11 +1,19 @@
-import React, { useState } from 'react'
+import React, { useState } from 'react';
+
+import {useHistory} from 'react-router-dom';
 import { Link } from 'react-router-dom';
 import Form from 'react-bootstrap/Form';
 import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
 import '../Login/Login.css';
+import Login from '../Login/Login';
 
 
 const Signup = () => {
+
+let history = useHistory();
+//let location = useLocation();
+
+//let {form} = location.state || {form: {path:"/"}};
 
 const [newUser, setNewUser] = useState({
     isSignedUp: false,
@@ -62,8 +70,9 @@ const handleSubmit = (e) => {
         newUserInfo.error = '';
         newUserInfo.success = true;
         setNewUser(newUserInfo);
+        history.push('/login');
         //updateUserName(newUser.name);
-        console.log(res.newUser);
+        //console.log(res.newUser);
     })
     .catch( error => {
         const errorCode = error.code;
@@ -73,23 +82,6 @@ const handleSubmit = (e) => {
     })
     e.preventDefault();
 }
-
-
-// const updateUserName = name =>{
-//     const user = getAuth().currentUser;
-
-//     user.updateProfile({
-//       displayName: name
-//     }).then(function() {
-//       console.log('user name updated successfully')
-//     }).catch(function(error) {
-//       console.log(error)
-//     });
-//   }
-
-
-
-
 
 
 
@@ -154,12 +146,11 @@ const handleSubmit = (e) => {
 
                                     <Form.Group className="justify-content-end d-flex" >
 
-                                        <input className="submit-btn btn" type="submit" value='Sign Up' />
+                                      <input className="submit-btn btn" type="submit" value='Sign Up' />
 
                                     </Form.Group>
                                 </Form>
-
-                            </div>
+                              </div>
                             <div className="col-md-3"></div>
                         </div>
 
