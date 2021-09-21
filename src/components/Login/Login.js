@@ -183,7 +183,7 @@ const Login = () => {
             <div className="d-grid gap-3 justify-content-start col-md-5 mx-auto">
               <p className="">Sign in With Social Accounts</p>
 
-              <button className="btn btn-font" onClick={handleGoogleSignIn} style={{ color: 'white', backgroundColor: 'red', borderRadius: '20px' }}><FontAwesomeIcon className="font-awesome" icon={faGooglePlusG} /> Continue With Google</button>
+              <button className="btn btn-font" onClick={handleGoogleSignIn} style={{ color: 'white', backgroundColor: 'rgb(190, 55, 55)', borderRadius: '20px' }}><FontAwesomeIcon className="font-awesome" icon={faGooglePlusG} /> Continue With Google</button>
 
               <button className="btn btn-font" onClick={handleFbSignIn} style={{ color: 'white', backgroundColor: 'blue', borderRadius: '20px' }}><FontAwesomeIcon className="font-awesome" icon={faFacebookF} /> Continue With Facebook</button>
 
