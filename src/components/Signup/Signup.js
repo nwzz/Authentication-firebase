@@ -70,7 +70,7 @@ const handleSubmit = (e) => {
         newUserInfo.error = '';
         newUserInfo.success = true;
         setNewUser(newUserInfo);
-        alert('You Successfully Signed Up ');
+        alert('Welcome!! You Successfully Signed Up ');
         history.push('/login');
         //updateUserName(newUser.name);
         //console.log(res.newUser);
@@ -78,6 +78,7 @@ const handleSubmit = (e) => {
     .catch( error => {
         const errorCode = error.code;
         const errorMessage = error.message;
+        alert(`Sorry, ${errorCode} Try again`);
         console.log(errorCode);
         console.log(errorMessage);
     })
