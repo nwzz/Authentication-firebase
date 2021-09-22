@@ -70,6 +70,7 @@ const handleSubmit = (e) => {
         newUserInfo.error = '';
         newUserInfo.success = true;
         setNewUser(newUserInfo);
+        alert('You Successfully Signed Up ');
         history.push('/login');
         //updateUserName(newUser.name);
         //console.log(res.newUser);
