@@ -183,11 +183,11 @@ const Login = () => {
             <div className="d-grid gap-3 justify-content-start col-md-5 mx-auto">
               <p className="">Sign in With Social Accounts</p>
 
-              <button className="btn btn-font" onClick={handleGoogleSignIn} style={{ color: 'white', backgroundColor: 'rgb(190, 55, 55)', borderRadius: '20px' }}><FontAwesomeIcon className="font-awesome" icon={faGooglePlusG} /> Continue With Google</button>
+              <button className="btn btn-font" onClick={handleGoogleSignIn} style={{ color: 'white', backgroundColor: 'rgb(211, 44, 14)', borderRadius: '20px' }}><FontAwesomeIcon className="font-awesome" icon={faGooglePlusG} size='2x'  /> Continue With Google</button>
 
-              <button className="btn btn-font" onClick={handleFbSignIn} style={{ color: 'white', backgroundColor: 'blue', borderRadius: '20px' }}><FontAwesomeIcon className="font-awesome" icon={faFacebookF} /> Continue With Facebook</button>
+              <button className="btn btn-font" onClick={handleFbSignIn} style={{ color: 'white', backgroundColor: 'blue', borderRadius: '20px'}}><FontAwesomeIcon className="font-awesome" icon={faFacebookF} size='2x'  /> Continue With Facebook</button>
 
-              <button className="btn btn-font" onClick={handleGitSignIn} style={{ color: 'white', backgroundColor: 'rgb(14, 136, 136)', borderRadius: '20px' }}><FontAwesomeIcon className="font-awesome" icon={faGithub} size="5px" /> Continue With GitHub</button><br />
+              <button className="btn btn-font" onClick={handleGitSignIn} style={{ color: 'white', backgroundColor: 'rgb(14, 136, 136)', borderRadius: '20px', paddingLeft:'0px' }}><FontAwesomeIcon className="font-awesome" icon={faGithub} size='2x' /> Continue With GitHub</button><br />
 
               <p>Are You New? <Link to={'/signup/'}><span className="signin-link">Sign Up</span> </Link></p>
             </div>

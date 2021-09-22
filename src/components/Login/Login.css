@@ -1,4 +1,7 @@
-    .signin-link{
+   *body{
+       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+   }
+   .signin-link{
     color: mediumaquamarine;
     text-decoration: none;
     font-weight: 500;
@@ -16,7 +19,7 @@
     
   }
 .font-awesome{
-    size: 3px;
+    
 }
 .form-icon{
     font-family: Arial ;
